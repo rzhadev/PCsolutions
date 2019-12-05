@@ -20,7 +20,7 @@ public class CoinSum {
 	 * @return the number of permutations for that coin value
 	 */
 	//BOTTOM UP APPROACH 
-	//looks for all sums starting at sums of 0 up to sums of n-1
+	//looks for all ways to get a total starting at a total of 0 up to totals of n-1
 	public static int getPermutations(int[] coins, int n) {
 		int[] ways = new int[n+1];
 		ways[0] = 1;
@@ -36,10 +36,9 @@ public class CoinSum {
 	/**
 	 * 
 	 * @param coins are the given coin values
-	 * @param m is the current length of the coin array we are looking at 
+	 * @param index is the current length of the coin array we are looking at 
 	 * @param n is the current sum we are looking for
-	 * @param memo is a memoization table for look up values
-	 * @return the number of permutations to get n
+	 * @return number of permutations for value n using coins
 	 */
 	//TOP DOWN APPROACH
 	//this solutions works by looking for all the sums of n by breaking the problem down into sub problems of coins[m-1] and sums of n-coins[m-1]
@@ -62,7 +61,14 @@ public class CoinSum {
 		int total = getRecursivePermutations(coins, index-1, n) + getRecursivePermutations(coins, index, n-coins[index-1]);
 		return total;
 	}
-	
+	/**
+	 * 
+	 * @param coins are the given coins
+	 * @param index is the current index
+	 * @param n is the sub sum total
+	 * @param memo is the memoization table
+	 * @return number of permutations for value n using coins 
+	 */
 	public static int getMemoizedPermutations(int[] coins, int index, int n, Hashtable<int[], Integer> memo) {
 		//look through each saved key to see if we have already calculated this solution total
 		for(int[] key : memo.keySet()) {
