@@ -7,7 +7,7 @@ public class PrimeFactors {
     }
     public static long greatestPrimeFactor(long n){
         long maxFactor = 0;
-        long m = Long.valueOf(n); //why is this needed?
+        long m = n; //why is this needed?
         for(long i = 2; i < n-1; i++ ){
             while( m % i == 0){
                 m /= i;
