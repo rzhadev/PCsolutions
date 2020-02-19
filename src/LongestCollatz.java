@@ -12,6 +12,7 @@ public class LongestCollatz {
 	//Must memoize sub problem solutions to solve
 	//avoid recalculating subproblems
 	//m must be a long, because int will overflow
+	//Hashtable k -> v
 	public static int chain(int n) {		
 		Hashtable<Long, Integer> map = new Hashtable<Long, Integer>();
 		int maxlength = 0;
