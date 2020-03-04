@@ -11,7 +11,7 @@ public class LatticePaths {
 	public static long routes(int gridsize, int[] coords, Hashtable<String, Long> map) {
 		//number of ways from any point = number of ways from point to the right + number of ways from point down
 		//if i am at the bottom
-		String coordkey = Integer.toString(coords[0])+Integer.toString(coords[1]);
+		String coordkey = Integer.toString(coords[0])+" "+Integer.toString(coords[1]);
 		//System.out.println(coordkey);
 		if(map.containsKey(coordkey)) {
 			return map.get(coordkey);
