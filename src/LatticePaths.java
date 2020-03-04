@@ -4,7 +4,7 @@ public class LatticePaths {
 
 	public static void main(String[] args) {
 		long startTime = System.currentTimeMillis();
-		System.out.println(routes(19, new int[] {0,0}, new Hashtable<String, Long>()));
+		System.out.println(routes(20, new int[] {0,0}, new Hashtable<String, Long>()));
 		long endTime = System.currentTimeMillis();
 
 	}
@@ -16,7 +16,7 @@ public class LatticePaths {
 		if(map.containsKey(coordkey)) {
 			return map.get(coordkey);
 		}
-		if(coords[0] == gridsize || coords[1] == gridsize) {
+		if(coords[0] == gridsize && coords[1] == gridsize) {
 			return 1;
 		}
 		else {
