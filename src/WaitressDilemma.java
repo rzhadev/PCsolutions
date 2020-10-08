@@ -4,10 +4,8 @@ public class WaitressDilemma {
     public static void main(String[] args) {
         System.out.println(minBridges(6, 1, 3, 1, 5));
     }
-    //originally tried to use recursion, but that doesn't work for a cyclic graph (super complicated)
-    //use bfs instead (create an acyclic graph from a cyclic one)
-    //dont need to deal with visited nodes, but big O blows up super fast
-    //exponential time
+    //use bfs (create an acyclic graph from a cyclic one)
+    //exponential time, but is brute forceable
     public static int minBridges(int n, int xi, int yi, int xj, int yj) {
     	ArrayList<int[]> current = new ArrayList<int[]>();
     	current.add(new int[] {xi, yi});
